@@ -1,0 +1,948 @@
+
+
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=10" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <title>Pleatcast lunch</title>
+    <meta content="The most advanced team chat meets enterprise search" name="description">
+    <meta content="Grape" name="author">
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Grape" />
+    <meta property="og:url" content="https://chatgrape.com/call/54928" />
+    <meta property="og:image" content="" />
+
+    <base href="https://grapecall.chatgrape.com" />
+
+    <link href="https://ug-cdn.com/static/ico/apple-touch-icon-144-precomposed.png" rel="apple-touch-icon-precomposed" sizes="144x144">
+    <link href="https://ug-cdn.com/static/ico/apple-touch-icon-114-precomposed.png" rel="apple-touch-icon-precomposed" sizes="114x114">
+    <link href="https://ug-cdn.com/static/ico/apple-touch-icon-72-precomposed.png" rel="apple-touch-icon-precomposed" sizes="72x72">
+    <link href="https://ug-cdn.com/static/ico/apple-touch-icon-57-precomposed.png" rel="apple-touch-icon-precomposed">
+    <link href="https://ug-cdn.com/static/ico/favicon.ico?v=2" rel="shortcut icon" type="image/png">
+
+    <link rel="stylesheet" href="https://ug-cdn.com/static/CACHE/css/035cc0ad9b70.css" type="text/css" />
+
+    <link rel="stylesheet" href="https://grapecall.chatgrape.com/css/all.css?4.30.0">
+    <link rel="stylesheet" type="text/css" href='https://ug-cdn.com/static/grapecall/css/grapecall.css?4.30.0'>
+
+
+    
+        <script src="https://ug-cdn.com/static/js/sentry.js"></script>
+        <script>
+            Sentry.init({ dsn: 'https://f8441a46c1bb4cc0883f3da11e999d96@sentry.ubergrape.com/20' , release: "4.30.0"});
+            Sentry.configureScope(function(scope) {
+                scope.setUser({"email": "this-is-mine@missing-email.noreply.chatgrape.com"});
+                
+                scope.setTag("call.id", "e46d89c0-89b1-4798-b4e1-393be005cb11");
+                
+            });
+
+        </script>
+    
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof(JitsiMeetJS) === "undefined" || !JitsiMeetJS.app || !JitsiMeetJS.app.entryPoints) {
+                return;
+            }
+
+            JitsiMeetJS.app.renderEntryPoint({
+                Component: JitsiMeetJS.app.entryPoints.APP
+            })
+        })
+
+        /*this will keep all users' sessions*/
+        let userSessions = JSON.parse('{"59035":["e6cca0f2f97c49f8a450f7ce0bd65fee","21f7b111956d46e5b03f23f9e516ddfc"]}');
+        /* id of the user accessing this call */
+        let currentUserId = 59035;
+
+        function checkStartWithAudioMuted (){
+            if (userSessions && currentUserId) {
+                return userSessions[currentUserId].length > 1;
+            }
+
+            return false;
+        }
+
+        function get_bool(value) {
+            return value==="True"
+        }
+    </script>
+
+    
+    <script>
+        let domain = location.protocol+'//'+location.hostname+(location.port ? ':'+location.port: '');
+        window.history.pushState("object or string", "Title", domain + "/call/54928/269967587242450f12714e2db1735767?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjb250ZXh0Ijp7InVzZXIiOnsiYXZhdGFyIjoiaHR0cHM6Ly9jaGF0Z3JhcGUuY29tL2ltZ3NyYy9zL2F2YXRhcl9hY3RpdmUvIiwibmFtZSI6InRoaXMtaXMtbWluZSIsImVtYWlsIjoiaGFyb2xkLmNvcm9uYWRvQGxvbm9rZXNjaG9vbHMub3JnIiwiaWQiOjU5MDM1fX0sImF1ZCI6ImppdHNpIiwiaXNzIjoiZ3JhcGUiLCJzdWIiOiJodHRwczovL2dyYXBlY2FsbC5jaGF0Z3JhcGUuY29tIiwicm9vbSI6IjI2OTk2NzU4NzI0MjQ1MGYxMjcxNGUyZGIxNzM1NzY3IiwiZXhwIjoxNjA1NzI5NjcwfQ.663zjRMhxtqb68y2Y4mwHGU79qmFnD5zIibPSxNq9U8");
+
+        window.localStorage["language"] = "en";
+    </script>
+
+    <script>
+
+        var config = {
+            // Connection
+            //
+
+            hosts: {
+                // XMPP domain.
+                domain: 'production.grapecall',
+
+                // When using authentication, domain for guest users.
+                // anonymousdomain: 'guest.example.com',
+
+                // Domain for authenticated users. Defaults to <domain>.
+                authdomain: 'production.grapecall',
+
+                // Jirecon recording component domain.
+                // jirecon: 'jirecon.production.grapecall',
+
+                // Call control component (Jigasi).
+                // call_control: 'callcontrol.production.grapecall',
+
+                // Focus component domain. Defaults to focus.<domain>.
+                focus: 'focus.production.grapecall',
+
+                // XMPP MUC domain. FIXME: use XEP-0030 to discover it.
+                muc: 'muc.production.grapecall',
+            },
+
+            // BOSH URL. FIXME: use XEP-0156 to discover it.
+            bosh: '/http-bind',
+
+            // Websocket URL
+            // websocket: 'wss://meet.jitsi/xmpp-websocket',
+
+            // The name of client node advertised in XEP-0115 'c' stanza
+            clientNode: 'http://jitsi.org/jitsimeet',
+
+            // The real JID of focus participant - can be overridden here
+            focusUserJid: 'focus@auth.production.grapecall',
+
+
+            // Testing / experimental features.
+            //
+
+            testing: {
+                // Enables experimental simulcast support on Firefox.
+                enableFirefoxSimulcast: false,
+
+                // P2P test mode disables automatic switching to P2P when there are 2
+                // participants in the conference.
+                p2pTestMode: false
+
+                // Enables the test specific features consumed by jitsi-meet-torture
+                // testMode: false
+
+                // Disables the auto-play behavior of *all* newly created video element.
+                // This is useful when the client runs on a host with limited resources.
+                // noAutoPlayVideo: false
+            },
+
+            // Disables ICE/UDP by filtering out local and remote UDP candidates in
+            // signalling.
+            // webrtcIceUdpDisable: false,
+
+            // Disables ICE/TCP by filtering out local and remote TCP candidates in
+            // signalling.
+            // webrtcIceTcpDisable: false,
+
+
+            // Media
+            //
+
+            // Audio
+
+            // Disable measuring of audio levels.
+            disableAudioLevels: get_bool("True"),
+            // audioLevelsInterval: 200,
+
+            // Enabling this will run the lib-jitsi-meet no audio detection module which
+            // will notify the user if the current selected microphone has no audio
+            // input and will suggest another valid device if one is present.
+            enableNoAudioDetection: get_bool("True"),
+
+            // Enabling this will run the lib-jitsi-meet noise detection module which will
+            // notify the user if there is noise, other than voice, coming from the current
+            // selected microphone. The purpose it to let the user know that the input could
+            // be potentially unpleasant for other meeting participants.
+            enableNoisyMicDetection: get_bool("True"),
+
+            // Start the conference in audio only mode (no video is being received nor
+            // sent).
+            startAudioOnly: get_bool("False"),
+
+            // Every participant after the Nth will start audio muted.
+            startAudioMuted: 5,
+
+            // Start calls with audio muted. Unlike the option above, this one is only
+            // applied locally. FIXME: having these 2 options is confusing.
+            startWithAudioMuted: checkStartWithAudioMuted(),
+
+            // Enabling it (with #params) will disable local audio output of remote
+            // participants and to enable it back a reload is needed.
+            // startSilent: false
+
+            // Video
+
+            // Sets the preferred resolution (height) for local video. Defaults to 720.
+            resolution: 720,
+
+            // w3c spec-compliant video constraints to use for video capture. Currently
+            // used by browsers that return true from lib-jitsi-meet's
+            // util#browser#usesNewGumFlow. The constraints are independent from
+            // this config's resolution value. Defaults to requesting an ideal
+            // resolution of 720p.
+            constraints: {
+                video: {
+                    height: {
+                        ideal: 720,
+                        max: 720,
+                        min: 240
+                    }
+                }
+            },
+
+            // Enable / disable simulcast support.
+            // disableSimulcast: false,
+
+            // Enable / disable layer suspension.  If enabled, endpoints whose HD
+            // layers are not in use will be suspended (no longer sent) until they
+            // are requested again.
+            enableLayerSuspension: get_bool("False"),
+
+            // Suspend sending video if bandwidth estimation is too low. This may cause
+            // problems with audio playback. Disabled until these are fixed.
+            // disableSuspendVideo: true,
+
+            enableTalkWhileMuted: get_bool("True"),
+
+            // Every participant after the Nth will start video muted.
+            startVideoMuted: 10,
+
+            // Start calls with video muted. Unlike the option above, this one is only
+            // applied locally. FIXME: having these 2 options is confusing.
+            // startWithVideoMuted: false,
+
+            // If set to true, prefer to use the H.264 video codec (if supported).
+            // Note that it's not recommended to do this because simulcast is not
+            // supported when  using H.264. For 1-to-1 calls this setting is enabled by
+            // default and can be toggled in the p2p section.
+            preferH264: get_bool("True"),
+
+            // If set to true, disable H.264 video codec by stripping it out of the
+            // SDP.
+            disableH264: get_bool("False"),
+
+            // Desktop sharing
+
+            // The ID of the jidesha extension for Chrome.
+            desktopSharingChromeExtId: null,
+
+            // Whether desktop sharing should be disabled on Chrome.
+            // desktopSharingChromeDisabled: false,
+
+            // The media sources to use when using screen sharing with the Chrome
+            // extension.
+            desktopSharingChromeSources: [ 'screen', 'window', 'tab' ],
+
+            // Required version of Chrome extension
+            desktopSharingChromeMinExtVersion: '0.1',
+
+            // Whether desktop sharing should be disabled on Firefox.
+            // desktopSharingFirefoxDisabled: false,
+
+            // Optional desktop sharing frame rate options. Default value: min:5, max:5.
+            desktopSharingFrameRate: {
+                min: 5,
+                max: 5
+            },
+
+            // Try to start calls with screen-sharing instead of camera video.
+            startScreenSharing: get_bool("False"),
+
+            // Recording
+
+            // Whether to enable file recording or not.
+            // fileRecordingsEnabled: false,
+            // Enable the dropbox integration.
+            // dropbox: {
+            //     appKey: '<APP_KEY>' // Specify your app key here.
+            //     // A URL to redirect the user to, after authenticating
+            //     // by default uses:
+            //     // 'https://meet.jitsi/static/oauth.html'
+            //     redirectURI:
+            //          'https://meet.jitsi/subfolder/static/oauth.html'
+            // },
+            // When integrations like dropbox are enabled only that will be shown,
+            // by enabling fileRecordingsServiceEnabled, we show both the integrations
+            // and the generic recording service (its configuration and storage type
+            // depends on jibri configuration)
+            // fileRecordingsServiceEnabled: false,
+            // Whether to show the possibility to share file recording with other people
+            // (e.g. meeting participants), based on the actual implementation
+            // on the backend.
+            // fileRecordingsServiceSharingEnabled: false,
+
+            // Whether to enable live streaming or not.
+            // liveStreamingEnabled: false,
+
+            // Transcription (in interface_config,
+            // subtitles and buttons can be configured)
+            // transcribingEnabled: false,
+
+            // Enables automatic turning on captions when recording is started
+            // autoCaptionOnRecord: false,
+
+            // Misc
+
+            // Default value for the channel "last N" attribute. -1 for unlimited.
+            channelLastN: -1,
+
+            // Disables or enables RTX (RFC 4588) (defaults to false).
+            // disableRtx: false,
+
+            // Disables or enables TCC (the default is in Jicofo and set to true)
+            // (draft-holmer-rmcat-transport-wide-cc-extensions-01). This setting
+            // affects congestion control, it practically enables send-side bandwidth
+            // estimations.
+            // enableTcc: true,
+
+            // Disables or enables REMB (the default is in Jicofo and set to false)
+            // (draft-alvestrand-rmcat-remb-03). This setting affects congestion
+            // control, it practically enables recv-side bandwidth estimations. When
+            // both TCC and REMB are enabled, TCC takes precedence. When both are
+            // disabled, then bandwidth estimations are disabled.
+            // enableRemb: false,
+
+            // Defines the minimum number of participants to start a call (the default
+            // is set in Jicofo and set to 2).
+            minParticipants: 2,
+
+            // Use XEP-0215 to fetch STUN and TURN servers.
+            useStunTurn: get_bool("True"),
+
+            // Enable IPv6 support.
+            // useIPv6: true,
+
+            // Enables / disables a data communication channel with the Videobridge.
+            // Values can be 'datachannel', 'websocket', true (treat it as
+            // 'datachannel'), undefined (treat it as 'datachannel') and false (don't
+            // open any channel).
+            openBridgeChannel: "datachannel",
+
+
+            // UI
+            //
+
+            // Use display name as XMPP nickname.
+            // useNicks: false,
+
+            // Require users to always specify a display name.
+            // requireDisplayName: true,
+
+            // Whether to use a welcome page or not. In case it's false a random room
+            // will be joined when no room is specified.
+            enableWelcomePage: false,
+
+            // Enabling the close page will ignore the welcome page redirection when
+            // a call is hangup.
+            enableClosePage: false,
+
+            // Disable hiding of remote thumbnails when in a 1-on-1 conference call.
+            // disable1On1Mode: false,
+
+            // Default language for the user interface.
+            defaultLanguage: "en",
+
+            // If true all users without a token will be considered guests and all users
+            // with token will be considered non-guests. Only guests will be allowed to
+            // edit their profile.
+            enableUserRolesBasedOnToken: false,
+
+            // Whether or not some features are checked based on token.
+            // enableFeaturesBasedOnToken: false,
+
+            // Enable lock room for all moderators, even when userRolesBasedOnToken is enabled and participants are guests.
+            // lockRoomGuestEnabled: false,
+
+            // When enabled the password used for locking a room is restricted to up to the number of digits specified
+            // roomPasswordNumberOfDigits: 10,
+            // default: roomPasswordNumberOfDigits: false,
+
+            // Message to show the users. Example: 'The service will be down for
+            // maintenance at 01:00 AM GMT,
+            // noticeMessage: '',
+
+            // Enables calendar integration, depends on googleApiApplicationClientID
+            // and microsoftApiApplicationClientID
+            // enableCalendarIntegration: false,
+
+            // Stats
+            //
+
+            // Whether to enable stats collection or not in the TraceablePeerConnection.
+            // This can be useful for debugging purposes (post-processing/analysis of
+            // the webrtc stats) as it is done in the jitsi-meet-torture bandwidth
+            // estimation tests.
+            // gatherStats: false,
+
+            // The interval at which PeerConnection.getStats() is called. Defaults to 10000
+            // pcStatsInterval: 10000,
+
+            // To enable sending statistics to callstats.io you must provide the
+            // Application ID and Secret.
+            // callStatsID: '',
+            // callStatsSecret: '',
+
+            // enables sending participants display name to callstats
+            // enableDisplayNameInStats: false,
+
+            // enables sending participants email if available to callstats and other analytics
+            // enableEmailInStats: false,
+
+            // Privacy
+            //
+
+            // If third party requests are disabled, no other server will be contacted.
+            // This means avatars will be locally generated and callstats integration
+            // will not function.
+            // disableThirdPartyRequests: false,
+
+
+            // Peer-To-Peer mode: used (if enabled) when there are just 2 participants.
+            //
+
+            p2p: {
+                // Enables peer to peer mode. When enabled the system will try to
+                // establish a direct connection when there are exactly 2 participants
+                // in the room. If that succeeds the conference will stop sending data
+                // through the JVB and use the peer to peer connection instead. When a
+                // 3rd participant joins the conference will be moved back to the JVB
+                // connection.
+                enabled: true,
+
+                // Use XEP-0215 to fetch STUN and TURN servers.
+                useStunTurn: get_bool("True"),
+
+                // The STUN servers that will be used in the peer to peer connections
+                stunServers: [
+                    { urls: "stun:meet-jit-si-turnrelay.jitsi.net:443" },
+                ],
+
+                // Sets the ICE transport policy for the p2p connection. At the time
+                // of this writing the list of possible values are 'all' and 'relay',
+                // but that is subject to change in the future. The enum is defined in
+                // the WebRTC standard:
+                // https://www.w3.org/TR/webrtc/#rtcicetransportpolicy-enum.
+                // If not set, the effective value is 'all'.
+                // iceTransportPolicy: 'all',
+
+                // If set to true, it will prefer to use H.264 for P2P calls (if H.264
+                // is supported).
+                preferH264: get_bool("True"),
+
+                // If set to true, disable H.264 video codec by stripping it out of the
+                // SDP.
+                disableH264: get_bool("False"),
+
+                // How long we're going to wait, before going back to P2P after the 3rd
+                // participant has left the conference (to filter out page reload).
+                // backToP2PDelay: 5
+            },
+
+            analytics: {},
+
+            // Information about the jitsi-meet instance we are connecting to, including
+            // the user region as seen by the server.
+            deploymentInfo: {
+            },
+
+            // Decides whether the start/stop recording audio notifications should play on record.
+            // disableRecordAudioNotification: false,
+
+            // Information for the chrome extension banner
+            // chromeExtensionBanner: {
+            //     // The chrome extension to be installed address
+            //     url: 'https://chrome.google.com/webstore/detail/jitsi-meetings/kglhbbefdnlheedjiejgomgmfplipfeb',
+
+            //     // Extensions info which allows checking if they are installed or not
+            //     chromeExtensionsInfo: [
+            //         {
+            //             id: 'kglhbbefdnlheedjiejgomgmfplipfeb',
+            //             path: 'jitsi-logo-48x48.png'
+            //         }
+            //     ]
+            // },
+
+            // Local Recording
+            //
+
+            // localRecording: {
+            // Enables local recording.
+            // Additionally, 'localrecording' (all lowercase) needs to be added to
+            // TOOLBAR_BUTTONS in interface_config.js for the Local Recording
+            // button to show up on the toolbar.
+            //
+            //     enabled: true,
+            //
+
+            // The recording format, can be one of 'ogg', 'flac' or 'wav'.
+            //     format: 'flac'
+            //
+
+            // },
+
+            // Options related to end-to-end (participant to participant) ping.
+            // e2eping: {
+            //   // The interval in milliseconds at which pings will be sent.
+            //   // Defaults to 10000, set to <= 0 to disable.
+            //   pingInterval: 10000,
+            //
+            //   // The interval in milliseconds at which analytics events
+            //   // with the measured RTT will be sent. Defaults to 60000, set
+            //   // to <= 0 to disable.
+            //   analyticsInterval: 60000,
+            //   },
+
+            // If set, will attempt to use the provided video input device label when
+            // triggering a screenshare, instead of proceeding through the normal flow
+            // for obtaining a desktop stream.
+            // NOTE: This option is experimental and is currently intended for internal
+            // use only.
+            // _desktopSharingSourceDevice: 'sample-id-or-label',
+
+            // If true, any checks to handoff to another application will be prevented
+            // and instead the app will continue to display in the current browser.
+            // disableDeepLinking: false,
+
+            // A property to disable the right click context menu for localVideo
+            // the menu has option to flip the locally seen video for local presentations
+            // disableLocalVideoFlip: false,
+
+            // Deployment specific URLs.
+            // deploymentUrls: {
+            //    // If specified a 'Help' button will be displayed in the overflow menu with a link to the specified URL for
+            //    // user documentation.
+            //    userDocumentationURL: 'https://docs.example.com/video-meetings.html',
+            //    // If specified a 'Download our apps' button will be displayed in the overflow menu with a link
+            //    // to the specified URL for an app download page.
+            //    downloadAppsUrl: 'https://docs.example.com/our-apps.html'
+            // },
+
+            // Options related to the remote participant menu.
+            // remoteVideoMenu: {
+            //     // If set to true the 'Kick out' button will be disabled.
+            //     disableKick: true
+            // },
+
+            // If set to true all muting operations of remote participants will be disabled.
+            // disableRemoteMute: true,
+
+            // List of undocumented settings used in jitsi-meet
+            /**
+             _immediateReloadThreshold
+             autoRecord
+             autoRecordToken
+             debug
+             debugAudioLevels
+             deploymentInfo
+             dialInConfCodeUrl
+             dialInNumbersUrl
+             dialOutAuthUrl
+             dialOutCodesUrl
+             disableRemoteControl
+             displayJids
+             etherpad_base
+             externalConnectUrl
+             firefox_fake_device
+             googleApiApplicationClientID
+             iAmRecorder
+             iAmSipGateway
+             microsoftApiApplicationClientID
+             peopleSearchQueryTypes
+             peopleSearchUrl
+             requireDisplayName
+             tokenAuthUrl
+             */
+
+            // List of undocumented settings used in lib-jitsi-meet
+            /**
+             _peerConnStatusOutOfLastNTimeout
+             _peerConnStatusRtcMuteTimeout
+             abTesting
+             avgRtpStatsN
+             callStatsConfIDNamespace
+             callStatsCustomScriptUrl
+             desktopSharingSources
+             disableAEC
+             disableAGC
+             disableAP
+             disableHPF
+             disableNS
+             enableLipSync
+             enableTalkWhileMuted
+             forceJVB121Ratio
+             hiddenDomain
+             ignoreStartMuted
+             nick
+             startBitrate
+             */
+
+
+            // Allow all above example options to include a trailing comma and
+            // prevent fear when commenting out the last value.
+            makeJsonParserHappy: 'even if last key had a trailing comma'
+
+            // no configuration value should follow this line.
+        };
+
+    </script>
+    <script src="https://grapecall.chatgrape.com/libs/do_external_connect.min.js"></script>
+    <script>
+        var interfaceConfig = {
+            DEFAULT_BACKGROUND: '#333333',
+            DISABLE_VIDEO_BACKGROUND: true,
+            INITIAL_TOOLBAR_TIMEOUT: 20000,
+            TOOLBAR_TIMEOUT: 4000,
+            TOOLBAR_ALWAYS_VISIBLE: false,
+            DEFAULT_REMOTE_DISPLAY_NAME: "https://pleatcast-lunch-chat.chatgrape.com",
+            DEFAULT_LOCAL_DISPLAY_NAME: "me",
+            SHOW_JITSI_WATERMARK: false,
+            JITSI_WATERMARK_LINK: 'https://staging.chatgrape.com',
+            SHOW_WATERMARK_FOR_GUESTS: false,
+            SHOW_BRAND_WATERMARK: false,
+            BRAND_WATERMARK_LINK: '',
+            SHOW_POWERED_BY: false,
+            SHOW_DEEP_LINKING_IMAGE: false,
+            GENERATE_ROOMNAMES_ON_WELCOME_PAGE: false,
+            DISPLAY_WELCOME_PAGE_CONTENT: false,
+            DISPLAY_WELCOME_PAGE_TOOLBAR_ADDITIONAL_CONTENT: false,
+            APP_NAME: 'Jitsi Meet',
+            NATIVE_APP_NAME: 'Jitsi Meet',
+            PROVIDER_NAME: 'Jitsi',
+            LANG_DETECTION: false,
+            INVITATION_POWERED_BY: true,
+            AUTHENTICATION_ENABLE: true,
+            TOOLBAR_BUTTONS: [
+                'microphone', 'camera', 'desktop', 'fullscreen',
+                'fodeviceselection', 'hangup', 'profile',
+                'etherpad', 'sharedvideo', 'settings', 'raisehand',
+                'videoquality', 'filmstrip', 'stats', 'shortcuts',
+                'tileview', 'mute-everyone'
+            ],
+            SETTINGS_SECTIONS: [ 'devices', 'language', 'moderator', 'profile', 'calendar' ],
+            VIDEO_LAYOUT_FIT: 'both',
+            filmStripOnly: false,
+            VERTICAL_FILMSTRIP: true,
+            CLOSE_PAGE_GUEST_HINT: false,
+            SHOW_PROMOTIONAL_CLOSE_PAGE: false,
+            RANDOM_AVATAR_URL_PREFIX: false,
+            RANDOM_AVATAR_URL_SUFFIX: false,
+            FILM_STRIP_MAX_HEIGHT: 120,
+            ENABLE_FEEDBACK_ANIMATION: false,
+            DISABLE_FOCUS_INDICATOR: true,
+            DISABLE_DOMINANT_SPEAKER_INDICATOR: false,
+            DISABLE_TRANSCRIPTION_SUBTITLES: true,
+            DISABLE_RINGING: false,
+            AUDIO_LEVEL_PRIMARY_COLOR: 'rgba(255,255,255,0.4)',
+            AUDIO_LEVEL_SECONDARY_COLOR: 'rgba(255,255,255,0.2)',
+            POLICY_LOGO: null,
+            LOCAL_THUMBNAIL_RATIO: 16 / 9,
+            REMOTE_THUMBNAIL_RATIO: 1,
+            LIVE_STREAMING_HELP_LINK: 'https://jitsi.org/live',
+            MOBILE_APP_PROMO: true,
+
+            /**
+             * Specify custom URL for downloading android mobile app.
+             */
+            MOBILE_DOWNLOAD_LINK_ANDROID: 'https://play.google.com/store/apps/details?id=com.chatgrape.android',
+
+            /**
+             * Specify URL for downloading ios mobile app.
+             */
+            MOBILE_DOWNLOAD_LINK_IOS: 'https://itunes.apple.com/us/app/chatgrape-intelligent-business/id943855717',
+
+            /**
+             * Specify mobile app scheme for opening the app from the mobile browser.
+             */
+            APP_SCHEME: 'chatgrape://',
+
+            /**
+             * Specify the Android app package name.
+             */
+            ANDROID_APP_PACKAGE: 'com.chatgrape.android',
+
+            MAXIMUM_ZOOMING_COEFFICIENT: 1.3,
+            SUPPORT_URL: 'https://www.grape.io/support',
+            CONNECTION_INDICATOR_AUTO_HIDE_ENABLED: true,
+            CONNECTION_INDICATOR_AUTO_HIDE_TIMEOUT: 5000,
+            CONNECTION_INDICATOR_DISABLED: false,
+            VIDEO_QUALITY_LABEL_DISABLED: false,
+            RECENT_LIST_ENABLED: false,
+
+            OPTIMAL_BROWSERS: [ 'chrome', 'chromium', 'nwjs', 'electron', 'firefox', 'safari' ],
+
+            UNSUPPORTED_BROWSERS: [],
+        };
+
+        var loggingConfig = {
+            defaultLogLevel: 'warn',
+
+            'modules/RTC/TraceablePeerConnection.js': 'warn',
+            'modules/statistics/CallStats.js': 'warn',
+            'modules/xmpp/strophe.util.js': 'warn'
+        };
+
+        typeof module === 'object' && typeof exports === 'object' && (module.exports = loggingConfig);
+
+    </script>
+    <script src="https://grapecall.chatgrape.com/libs/lib-jitsi-meet.min.js?4.30.0"></script>
+    <script src="https://grapecall.chatgrape.com/libs/app.bundle.min.js?4.30.0"></script>
+    
+    <script src="https://grapecall.chatgrape.com/libs/grapecall/grape-electron_screensharing.js?4.30.0"></script>
+
+    <template id="welcome-page-additional-content-template"></template>
+    <template id="settings-toolbar-additional-content-template"></template>
+</head>
+<body>
+
+
+<div class="box-invited-users"></div>
+
+
+    
+
+<div class="modal fade" id="inviteMemberModal" tabindex="-1" role="dialog" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-vertical" role="document">
+        <div class="modal-content">
+            <div class="modal-body" data-toggle="lists" data-options='{"valueNames": ["name"]}'>
+                <div class="search-header">Call members</div>
+                <form>
+                    <div class="search-group">
+                        <input type="text" class="search" id="search" placeholder="Search for group members..." autocomplete="off">
+                    </div>
+                </form>
+                <div class="max-users-reached text-center d-none">
+                    <span>Maximum number of call participants reached</span>
+                </div>
+                <div class="no-user text-center d-none">
+                    <span>No member with this name could be found.</span>
+                </div>
+                <div class="search-list">
+                    <div class="list-group list-group-flush list d-none">
+                    </div>
+                    <div class="spinner text-center">
+                        <div class="spinner-border" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="invite-buttons mt-5 text-right">
+                    <button class="btn btn-cancel" id="btn-cancel">Cancel</button>
+                    <button class="btn btn-call btn-disabled" id="btn-invite">Call</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    
+
+<div class="grape-toolbar">
+    
+        <div data-toggle="modal" data-target="#inviteMemberModal" class="toolbar-invite-wrapper">
+            <div class="toolbar-item toolbar-invite" data-toggle="tooltip" data-placement="top" data-html="true" title="Call members">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="20" cy="20" r="19.5" fill="#333333" stroke="#737373"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M15.8456 17.9921L17.1182 18.1374C17.6242 18.1975 18.005 18.6234 18 19.1294V19.9961C18 20.5623 17.529 21.0332 16.9629 20.9982C12.6893 20.7326 9.26737 17.3157 9.00184 13.0371C8.96677 12.471 9.43772 12 10.0039 12H10.8706C11.3816 12 11.8075 12.3808 11.8676 12.8868L12.0129 14.1493C12.048 14.455 11.9428 14.7556 11.7273 14.971L10.8005 15.8979C11.5219 17.3207 12.6843 18.4781 14.1021 19.1995L15.024 18.2777C15.2394 18.0622 15.54 17.957 15.8456 17.9921ZM27.5 17.5C27.5 19.4338 25.9338 21 24 21C22.0663 21 20.5 19.4338 20.5 17.5C20.5 15.5663 22.0663 14 24 14C25.9338 14 27.5 15.5663 27.5 17.5ZM17 26.25C17 23.9225 21.6638 22.75 24 22.75C26.3363 22.75 31 23.9225 31 26.25V27.125C31 27.6063 30.6063 28 30.125 28H17.875C17.3938 28 17 27.6063 17 27.125V26.25Z" fill="white"/>
+                </svg>
+            </div>
+        </div>
+    
+    
+</div>
+    
+
+<div class="modal-wrapper" id="callAnimation">
+    <div class="modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="call-pulse">
+                <svg height="206px" width="206px">
+                    <circle class="outer-circle" cx="50%" cy="50%" r="102px" stroke-dasharray="1 4" stroke-linecap="round" fill="transparent"></circle>
+                </svg>
+                <img class="inner-circle" height="160" width="160" src="phone160x160" alt="Pleatcast lunch">
+            </div>
+            <div class="call-calling-info mt-5 text-center">
+                <h5 class="modal-title" id="exampleModalCenterTitle">Pleatcast lunch</h5>
+                <span class="call-calling">Calling</span>
+            </div>
+            <div class="call-cancel text-center">
+                <button onClick="hangUp()" class="button cancel">
+                    <svg width="44" height="18" viewBox="0 0 22 9" xmlns="http://www.w3.org/2000/svg" class="missedIcon">
+                        <path d="M11 2.333c-.708 0-1.403.052-2.083.157-.68.104-1.348.26-2 .468v2.75c0 .167-.045.33-.136.49a.79.79 0 0 1-.364.344 9.694 9.694 0 0 0-2.375 1.625.832.832 0 0 1-.282.187.918.918 0 0 1-.343.063.918.918 0 0 1-.344-.063.832.832 0 0 1-.281-.187L.583 5.958a.832.832 0 0 1-.187-.28.918.918 0 0 1-.063-.345c0-.125.021-.24.063-.343a.833.833 0 0 1 .187-.282 16.983 16.983 0 0 1 2.209-1.75 14.735 14.735 0 0 1 2.5-1.302 15.557 15.557 0 0 1 2.75-.823A14.841 14.841 0 0 1 11 .542c1.014 0 2 .097 2.958.291.959.195 1.875.47 2.75.823a14.913 14.913 0 0 1 4.708 3.052.834.834 0 0 1 .25.625.833.833 0 0 1-.25.625l-2.208 2.209a.833.833 0 0 1-.28.187.918.918 0 0 1-.345.063.917.917 0 0 1-.343-.063.833.833 0 0 1-.282-.187 8.697 8.697 0 0 0-1.114-.907 8.962 8.962 0 0 0-1.26-.718.789.789 0 0 1-.355-.292.85.85 0 0 1-.146-.5V3a14.113 14.113 0 0 0-1.99-.49A12.348 12.348 0 0 0 11 2.333z"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+<script id="userTemplate" type="text/x-jsrender">
+    <div class="list-group-item px-0[%if status === 8 || status === 0 || is_invited %] inactive[%else is_selected %] selected[%/if%]" data-userId=[%:id%] data-user-status=[%:status%]>
+        <div class="row align-items-center list-group-item-user">
+            <div class="col-auto avatar-container">
+                <div class="avatar">
+                    <img src="[%:avatar%]" alt="[%html:display_name%]" class="avatar-img rounded-circle">
+                </div>
+                <div class="positioner">
+                    <i class="fe fe-check icon"></i>
+                </div>
+                <div class="selected-overlay"></div>
+            </div>
+            <div>
+                <h4 class="text-body mb-1 name">[%html:display_name%]</h4>
+                [%if status !== null && status !== 8 %]
+                <span class="text-body small mb-0 status bg-[%:status_css%]"></span>
+                [%/if%]
+                [%if status === 8 %]
+                <span class="text-body small mb-0 status bg-success"></span>
+                [%/if%]
+            </div>
+            <div class="col ml-n2 text-right user-in-call">
+                [%if status === 8 || is_invited %]<img src="https://ug-cdn.com/static/grapecall/img/in_call.svg" alt="[%:status_str%]">[%/if%]
+            </div>
+        </div>
+    </div>
+</script>
+
+<script id="invitedUserTemplate" type="text/x-jsrender">
+    <div class="avatar avatar-sm spinner[%if can_cancel_invitation %] cancel-invitation[%/if%]" data-userId=[%:id%] data-toggle="tooltip" data-placement="bottom" title="[%html:display_name%]" >
+        <img src="[%:avatar%]" alt="[%html:display_name%]" class="avatar-img rounded-circle">
+        [%if can_cancel_invitation %]
+        <div class="cancel-invitation-bg"></div>
+        <div class="cancel-invitation-hangup"><img src="https://ug-cdn.com/static/grapecall/img/hangup.svg"></div>
+        [%/if%]
+    </div>
+</script>
+
+<script id="removableTabTemplate" type="text/x-jsrender">
+    <div class="badge badge-pill invite-user-tag" data-user-id=[%:id%]>
+        <span>[%html:display_name%]</span>
+        <button type="button" class="close" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+</script>
+
+
+
+
+
+<div class="modal-wrapper" id="endedCallModal">
+    <div class="modal-dialog-centered" role="document">
+        <div class="modal-content text-center">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">Pleatcast lunch</h5>
+            </div>
+            <div class="modal-body">
+                <span class="call-finished call-ended">This call has ended.</span>
+                <span class="call-finished call-rejected">Rejected the call and might be busy.</span>
+                <span class="call-finished call-missed">Missed the call and might be busy.</span> <span class="call-finished call-missed" id="retry-call">Try again?</span>
+                <span class="call-finished call-hungup">You hung up.</span>
+                <span class="call-finished call-full">Maximum number of participants in the call</span>
+                <span class="call-finished call-already-call">You are already in another call</span>
+                <span class="call-finished call-not-reachable">Can't be reached right now</span>
+                <span class="call-finished call-kickout">You were removed from the conference!</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <div id="react"></div>
+
+
+
+    <script src="https://ug-cdn.com/static/grapecall/js/grapecall-min.js?4.30.0"></script>
+
+
+<script>
+    // change jsrender delimiters
+    $.views.settings.delimiters("[%", "%]");
+
+    let subject = "Pleatcast lunch";
+
+    let isCallOver = false;
+    let isCallFull = false;
+    let isAlreadyInCall = false;
+    let partnerNotReachable = false;
+    let channel_type = "room";
+
+    let publishStatsEnabled = get_bool("True");
+
+    let platform = "";
+    let call_id = "e46d89c0-89b1-4798-b4e1-393be005cb11";
+
+    let selfTestEnabled = get_bool("True");
+
+    let currentVideoDeviceId;
+    let currentMicDeviceId;
+    let currentSpeakerDeviceId;
+
+    
+        let currentSession = "21f7b111956d46e5b03f23f9e516ddfc";
+
+        let orgDomain = "https://pleatcast-lunch-chat.chatgrape.com";
+        let jitsiDomain = "https://grapecall.chatgrape.com";
+
+        let organization_id = 9636;
+
+        let keepAlivePeriod = 5;
+        let channelId = 54928;
+
+        /* Keeps track of all users who were already invited */
+        let invitedUsers = JSON.parse('[]');
+
+        /* ringing timeout (in seconds) */
+        let ringing_timeout = 30;
+
+        /* Keeps track of all users already in this call */
+        let usersInCall = [59035];
+
+        //max users that can be in the call
+        let maxUsersInCall = 100;
+
+        let callStarted = true;
+
+        let inCallIcon = "https://ug-cdn.com/static/grapecall/img/in_call.svg";
+
+        let $jitsiElement = $("#react");
+    
+
+</script>
+<script src="https://ug-cdn.com/static/grapecall/js/utils.js?4.30.0"></script>
+<script src="https://ug-cdn.com/static/grapecall/js/self-test.js?4.30.0"></script>
+<script src="https://ug-cdn.com/static/grapecall/js/websocket.js?4.30.0"></script>
+<script src="https://ug-cdn.com/static/grapecall/js/toolbar.js?4.30.0"></script>
+<script src="https://ug-cdn.com/static/grapecall/js/invitation.js?4.30.0"></script>
+<script src="https://ug-cdn.com/static/grapecall/js/call.js?4.30.0"></script>
+<script src="https://ug-cdn.com/static/grapecall/js/handlers.js?4.30.0"></script>
+
+<script>
+    
+</script>
+
+</body>
+</html>
